@@ -1,4 +1,4 @@
-package com.example.model.domain;
+package com.example.entity;
 
 /**
  * Created by tianfeng on 2017/4/16.

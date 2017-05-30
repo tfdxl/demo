@@ -1,7 +1,8 @@
 package com.example.controller;
 
-import com.example.model.domain.Contact;
+import com.example.entity.Contact;
 import com.example.service.ContactService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +15,7 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping(value = "/contacts")
+@Api("联系人管理的api")
 public class ContactController {
 
     @Autowired

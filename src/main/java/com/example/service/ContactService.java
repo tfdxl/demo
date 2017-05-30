@@ -1,6 +1,6 @@
 package com.example.service;
 
-import com.example.model.domain.Contact;
+import com.example.entity.Contact;
 
 import java.util.List;
 

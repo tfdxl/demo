@@ -1,6 +1,6 @@
 package com.example.service.impl;
 
-import com.example.model.domain.Contact;
+import com.example.entity.Contact;
 import com.example.service.ContactService;
 import org.springframework.stereotype.Service;
 
