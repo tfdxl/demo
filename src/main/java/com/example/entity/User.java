@@ -22,6 +22,8 @@ public class User {
 
     private String address;
 
+    private String password;
+
     public Long getId() {
         return id;
     }
@@ -60,5 +62,17 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", birthDay=" + birthDay +
+                ", sex='" + sex + '\'' +
+                ", address='" + address + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

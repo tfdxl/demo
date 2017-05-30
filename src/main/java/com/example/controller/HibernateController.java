@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 
 /**
@@ -26,7 +27,8 @@ public class HibernateController {
     @RequestMapping("getUserById")
     @ResponseBody
     @ApiOperation(value = "通过主键获取用户",httpMethod ="POST", response = User.class,notes = "通过主键获取用户")
-    public User getUserById(Long id) {
+    public User getUserById(Long id, HttpServletRequest request) {
+
         User u = userService.findOne(id);
         System.out.println("userRepository: " + userService);
         System.out.println("id: " + id);
