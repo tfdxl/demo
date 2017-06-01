@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学习angular js</title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+
+<!-- ng-controller指定了angularJS的控制器 -->
+<div ng-app="myApp" ng-controller="myCtrl">
+    <table border="1"  cellspacing="0" cellpadding="0">
+        <tr>
+            <th>姓名</th>
+            <th>密码</th>
+            <th>生日</th>
+            <th>性别</th>
+            <th>地址</th>
+        </tr>
+
+        <tr ng-repeat="x in users">
+            <td>{{x.userName}}</td>
+            <td>{{x.password}}</td>
+            <td>{{x.birthDay}}</td>
+            <td>{{x.sex}}</td>
+            <td>{{x.address}}</td>
+        </tr>
+
+    </table>
+</div>
+
+<script>
+
+
+    var url = "/hibernate/getUserList?currentPage=1&pageSize=20";
+
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function ($scope, $http) {
+        $http({
+            method: 'GET',
+            url: url
+        }).then(function successCallback(response) {
+
+            console.log('data from server is ' + JSON.stringify(response.data.data));
+            $scope.users = response.data.data;
+            // 请求成功执行代码
+        }, function errorCallback(response) {
+            // 请求失败执行代码
+        });
+    });
+
+
+</script>
+</body>
+</html>

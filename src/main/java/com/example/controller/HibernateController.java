@@ -2,15 +2,19 @@ package com.example.controller;
 
 import com.example.entity.User;
 import com.example.service.UserService;
+import com.example.utils.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by tianfeng on 2017/5/30.
@@ -26,7 +30,7 @@ public class HibernateController {
     //将返回的bean作为返回体的一部分
     @RequestMapping("getUserById")
     @ResponseBody
-    @ApiOperation(value = "通过主键获取用户",httpMethod ="POST", response = User.class,notes = "通过主键获取用户")
+    @ApiOperation(value = "通过主键获取用户", httpMethod = "POST", response = User.class, notes = "通过主键获取用户")
     public User getUserById(Long id, HttpServletRequest request) {
 
         User u = userService.findOne(id);
@@ -48,8 +52,21 @@ public class HibernateController {
 
     @RequestMapping("count")
     @ResponseBody
-    public long count(){
+    public long count() {
         return userService.count();
+    }
+
+    @RequestMapping("getUserList")
+    @ResponseBody
+    public Result getUserList(@RequestParam("currentPage") Integer currentPage, @RequestParam("pageSize") Integer pageSize) {
+
+        List<User> list = new ArrayList<User>();
+        list.add(new User("tianfeng", new Date(), "男", "浙江杭州", "123"));
+        list.add(new User("xiaolei", new Date(), "男", "浙江杭州", "123"));
+        list.add(new User("liqin", new Date(), "男", "浙江杭州", "123"));
+        list.add(new User("asa", new Date(), "男", "浙江杭州", "123"));
+        list.add(new User("afds", new Date(), "男", "浙江杭州", "123"));
+        return Result.success(list);
     }
 
 }

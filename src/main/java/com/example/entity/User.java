@@ -16,6 +16,14 @@ public class User {
 
     private String userName;
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     private Date birthDay;
 
     private String sex;
@@ -62,6 +70,17 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public User(String userName, Date birthDay, String sex, String address, String password) {
+        this.userName = userName;
+        this.birthDay = birthDay;
+        this.sex = sex;
+        this.address = address;
+        this.password = password;
+    }
+
+    public User() {
     }
 
     @Override
