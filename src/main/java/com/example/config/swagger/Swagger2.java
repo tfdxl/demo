@@ -16,7 +16,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class Swagger2 {
 
     @Bean
-    public Docket createRestApi(){
+    public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
@@ -25,10 +25,10 @@ public class Swagger2 {
                 .build();
     }
 
-    private ApiInfo apiInfo(){
+    private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("TF-finance-analysis")
-                .description("描述")
+                .description("个人根据Springboot做的一个小平台后续功能将进一步完善")
                 .termsOfServiceUrl("http://127.0.0.1")
                 .version("1.0")
                 .build();

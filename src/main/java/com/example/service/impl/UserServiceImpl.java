@@ -51,7 +51,6 @@ public class UserServiceImpl implements UserService {
             System.out.println("The user is login ... "+user);
             result = true;
         }
-
         return result;
     }
 }
