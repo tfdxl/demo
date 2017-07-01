@@ -23,5 +23,4 @@ public class DemoApplicationTests {
         User user = userService.findUserByName("tianfeng");
         System.out.println(user);
     }
-
 }
