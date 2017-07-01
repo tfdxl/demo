@@ -8,7 +8,6 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
@@ -41,6 +40,7 @@ public class HibernateController {
 
     @RequestMapping("saveUser")
     @ResponseBody
+    @ApiOperation(value = "保存用户", httpMethod = "POST")
     public void saveUser() {
         User u = new User();
         u.setUserName("wan");
@@ -52,13 +52,15 @@ public class HibernateController {
 
     @RequestMapping("count")
     @ResponseBody
+    @ApiOperation(value = "获得总数", httpMethod = "GET")
     public long count() {
         return userService.count();
     }
 
     @RequestMapping("getUserList")
     @ResponseBody
-    public Result getUserList(@RequestParam("currentPage") Integer currentPage, @RequestParam("pageSize") Integer pageSize) {
+    @ApiOperation(value = "获得列表", httpMethod = "GET")
+    public Result getUserList() {
 
         List<User> list = new ArrayList<User>();
         list.add(new User("tianfeng", new Date(), "男", "浙江杭州", "123"));
