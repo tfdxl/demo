@@ -28,10 +28,9 @@ public class Swagger2 {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("TF-finance-analysis")
-                .description("个人根据Springboot做的一个小平台后续功能将进一步完善")
+                .description("个人根据SpringBoot做的一个小平台后续功能将进一步完善")
                 .termsOfServiceUrl("http://127.0.0.1")
                 .version("1.0")
                 .build();
     }
-
 }
