@@ -58,8 +58,12 @@ public class WeblogAspect {
      */
     @AfterReturning(returning = "ret", pointcut = "logPointCut()")
     public void doAfterReturning(Object ret) throws Throwable {
+
         // 处理完请求，返回内容
-        LOG.info("返回值 : " + ret);
+        /**
+         * 这里直接调用的是toString
+         */
+        LOG.info("返回值 :{} ，对应的class: {} ", ret, ret.getClass().getName());
     }
 
     @Around("logPointCut()")

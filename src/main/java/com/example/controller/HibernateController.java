@@ -70,5 +70,4 @@ public class HibernateController {
         list.add(new User("bee", new Date(), "男", "浙江杭州", "123").setId(567L));
         return Result.success(list);
     }
-
 }

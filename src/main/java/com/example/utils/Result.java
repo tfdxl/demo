@@ -3,7 +3,10 @@ package com.example.utils;
 import com.example.constants.ResponseCode;
 
 /**
- * Created by tianfeng on 2017/5/30.
+ * 返回到前端的结果
+ *
+ * @author tianfeng
+ * @date 2017/5/30
  */
 public class Result<T> {
 
@@ -49,6 +52,15 @@ public class Result<T> {
 
     public static Result<?> fail(ResponseCode responseCode) {
         return new Result(responseCode.getCode(), responseCode.getMessage(), false);
+    }
+
+    @Override
+    public String toString() {
+        return "Result{" +
+                "statusCode=" + statusCode +
+                ", message='" + message + '\'' +
+                ", data=" + data +
+                '}';
     }
 }
 
