@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,7 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
     @RequestMapping("/hello")
-    public String home() {
+    @ApiOperation(value = "hello", httpMethod = "POST")
+    public String hello() {
         return "Hello World!";
     }
 }
