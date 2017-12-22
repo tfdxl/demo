@@ -17,6 +17,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
 
 /**
+ * 日志记录器
+ *
  * @author tianfeng
  * @date 2017/12/22
  */
