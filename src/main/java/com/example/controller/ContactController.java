@@ -50,6 +50,7 @@ public class ContactController {
     }
 
     @RequestMapping("/cache")
+    @ApiOperation(value = "cache", httpMethod = "GET")
     public ResponseEntity<String> cache(HttpServletRequest request, //为了方便测试，此处传入文档最后修改时间
                                         @RequestParam("millis") long lastModifiedMillis,
                                         //浏览器验证文档内容是否修改时传入的Last-Modified
@@ -61,7 +62,7 @@ public class ContactController {
 
         //判断内容是否修改了，此处使用等值判断
         if (ifModifiedSince != null && ifModifiedSince.getTime() == lastModifiedMillis) {
-            return new ResponseEntity<String>(HttpStatus.NOT_MODIFIED);
+            return new ResponseEntity<>(HttpStatus.NOT_MODIFIED);
         }
 
         DateFormat gmtDateFormat = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss 'GMT'", Locale.US);
