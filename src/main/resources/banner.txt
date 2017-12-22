@@ -1,5 +1,7 @@
-M   M  OOO  N   N L    III EEEE 
-MM MM O   O NN  N L     I  E    
-M M M O   O N N N L     I  EEE  
-M   M O   O N  NN L     I  E    
-M   M  OOO  N   N LLLL III EEEE 
+#     # ####### #     # #       ### #######
+##   ## #     # ##    # #        #  #       
+# # # # #     # # #   # #        #  #       
+#  #  # #     # #  #  # #        #  #####   
+#     # #     # #   # # #        #  #       
+#     # #     # #    ## #        #  #       
+#     # ####### #     # ####### ### #######
