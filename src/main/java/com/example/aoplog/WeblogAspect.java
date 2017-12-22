@@ -47,7 +47,6 @@ public class WeblogAspect {
         LOG.info("CLASS_METHOD : " + joinPoint.getSignature().getDeclaringTypeName() + "."
                 + joinPoint.getSignature().getName());
         LOG.info("参数 : " + Arrays.toString(joinPoint.getArgs()));
-
     }
 
     /**
