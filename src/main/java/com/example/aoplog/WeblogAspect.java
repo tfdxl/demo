@@ -15,6 +15,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
+import java.util.Enumeration;
 
 /**
  * 日志记录器
@@ -40,12 +41,25 @@ public class WeblogAspect {
 
         // 接收到请求，记录请求内容
         final ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+
+        //请求数据
         final HttpServletRequest request = attributes.getRequest();
 
         // 记录下请求内容
         LOG.info("请求地址 : " + request.getRequestURL().toString());
+
+        //请求头
+        final Enumeration<String> headers = request.getHeaderNames();
+
+        while (headers.hasMoreElements()) {
+            final String headerName = headers.nextElement();
+            final String headerValue = request.getHeader(headerName);
+            LOG.info("header: headerValue---> " + headerName + ", headerValue ---> " + headerValue);
+        }
+
         LOG.info("HTTP METHOD : " + request.getMethod());
         LOG.info("IP : " + request.getRemoteAddr());
+        LOG.info("PORT: " + request.getRemotePort());
         LOG.info("CLASS_METHOD : " + joinPoint.getSignature().getDeclaringTypeName() + "."
                 + joinPoint.getSignature().getName());
         LOG.info("参数 : " + Arrays.toString(joinPoint.getArgs()));
@@ -61,8 +75,8 @@ public class WeblogAspect {
     @AfterReturning(returning = "ret", pointcut = "logPointCut()")
     public void doAfterReturning(Object ret) throws Throwable {
 
-        // 处理完请求，返回内容
         /**
+         * 处理完请求，返回内容
          * 这里直接调用的是toString
          */
         LOG.info("返回值 :{} ，对应的class: {} ", ret, ret.getClass().getName());
