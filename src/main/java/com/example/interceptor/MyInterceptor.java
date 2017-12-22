@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.lang.reflect.Method;
 
 /**
- * Created by tianfeng on 2017/12/22.
+ * @author tianfeng
+ * @date 2017/12/22
  */
 public class MyInterceptor implements HandlerInterceptor {
 
