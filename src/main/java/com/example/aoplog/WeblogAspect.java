@@ -53,7 +53,8 @@ public class WeblogAspect {
     /**
      * returning的值和doAfterReturning的参数名一致
      *
-     * @param ret
+     * @param ret Object
+     * @return void
      * @throws Throwable
      */
     @AfterReturning(returning = "ret", pointcut = "logPointCut()")
@@ -66,11 +67,19 @@ public class WeblogAspect {
         LOG.info("返回值 :{} ，对应的class: {} ", ret, ret.getClass().getName());
     }
 
+    /**
+     * 环绕执行
+     *
+     * @param pjp
+     * @return
+     * @throws Throwable
+     */
     @Around("logPointCut()")
     public Object doAround(ProceedingJoinPoint pjp) throws Throwable {
-        long startTime = System.currentTimeMillis();
+
+        final long startTime = System.currentTimeMillis();
         // ob 为方法的返回值
-        Object ob = pjp.proceed();
+        final Object ob = pjp.proceed();
         LOG.info("耗时 : " + (System.currentTimeMillis() - startTime));
         return ob;
     }
