@@ -3,18 +3,24 @@ package com.example.entity;
 /**
  * Created by tianfeng on 2017/5/30.
  */
+
 import javax.persistence.*;
 import java.util.Date;
 
+/**
+ * @author tianfeng
+ */
 @Entity
-@Table(name="user")
+@Table(name = "user")
 public class User {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String userName;
+
+    private String password;
 
     private Date birthDay;
 
@@ -22,14 +28,15 @@ public class User {
 
     private String address;
 
-    private String password;
+    private String qq;
 
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public User setId(Long id) {
         this.id = id;
+        return this;
     }
 
     public String getPassword() {
@@ -78,6 +85,14 @@ public class User {
         this.sex = sex;
         this.address = address;
         this.password = password;
+    }
+
+    public String getQq() {
+        return qq;
+    }
+
+    public void setQq(String qq) {
+        this.qq = qq;
     }
 
     public User() {

@@ -63,11 +63,11 @@ public class HibernateController {
     public Result getUserList() {
 
         List<User> list = new ArrayList<User>();
-        list.add(new User("tianfeng", new Date(), "男", "浙江杭州", "123"));
-        list.add(new User("xiaolei", new Date(), "男", "浙江杭州", "123"));
-        list.add(new User("liqin", new Date(), "男", "浙江杭州", "123"));
-        list.add(new User("asa", new Date(), "男", "浙江杭州", "123"));
-        list.add(new User("afds", new Date(), "男", "浙江杭州", "123"));
+        list.add(new User("tianfeng", new Date(), "男", "浙江杭州", "123").setId(123L));
+        list.add(new User("monlie", new Date(), "男", "浙江杭州", "123").setId(456L));
+        list.add(new User("mengmeng", new Date(), "男", "浙江杭州", "123").setId(789L));
+        list.add(new User("xiaomeng", new Date(), "男", "浙江杭州", "123").setId(234L));
+        list.add(new User("bee", new Date(), "男", "浙江杭州", "123").setId(567L));
         return Result.success(list);
     }
 
