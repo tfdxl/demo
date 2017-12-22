@@ -35,21 +35,19 @@ public class DemoApplicationTests {
 
     @Test
     public void testInsert() {
-        while (true) {
-            Trace trace = new Trace();
-            trace.setVin(UUID.randomUUID().toString().substring(17));
-            trace.setActionDesc("this is result");
-            trace.setActionType(200);
-            trace.setCarDealId(new Random().nextLong());
-            trace.setDateHappen(new Date());
-            trace.setUserId("tianfeng");
-            trace.setUserName("tianfeng");
-            trace.setUserPhone("12309087654");
-            trace.setSaleOrderNo(String.valueOf(new Random().nextLong()));
-            trace.setMsgId("fdsfdsf");
-            trace.setResultStatus(230);
-            trace.setResultStatusDesc("this is result");
-            traceDao.save(trace);
-        }
+        Trace trace = new Trace();
+        trace.setVin(UUID.randomUUID().toString().substring(17));
+        trace.setActionDesc("this is result");
+        trace.setActionType(200);
+        trace.setCarDealId(new Random().nextLong());
+        trace.setDateHappen(new Date());
+        trace.setUserId("tianfeng");
+        trace.setUserName("tianfeng");
+        trace.setUserPhone("12309087654");
+        trace.setSaleOrderNo(String.valueOf(new Random().nextLong()));
+        trace.setMsgId("fdsfdsf");
+        trace.setResultStatus(230);
+        trace.setResultStatusDesc("this is result");
+        traceDao.save(trace);
     }
 }
