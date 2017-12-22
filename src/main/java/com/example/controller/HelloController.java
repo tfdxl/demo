@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
     @RequestMapping("/hello")
-    @ApiOperation(value = "hello", httpMethod = "GET")
+    @ApiOperation(value = "hello", httpMethod = "POST")
     public String hello() {
         return "Hello World!";
     }
