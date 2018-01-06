@@ -10,6 +10,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+/**
+ * 应用启动类
+ *
+ * @author tianfeng
+ */
 @ImportResource("classpath:application-*.xml")
 @SpringBootApplication
 @EnableJpaRepositories(basePackages = "com.example.repository")
