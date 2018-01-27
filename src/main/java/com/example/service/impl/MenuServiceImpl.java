@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class MenuServiceImpl implements MenuService{
 
-    @Cacheable("menu")
+    @Cacheable(value = "menu")
     @Override
     public Menu getMenu(Long id) {
         System.err.println("not from cache ... ");
