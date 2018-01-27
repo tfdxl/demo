@@ -30,6 +30,11 @@ public class User {
 
     private String qq;
 
+    private String email;
+
+    private int age;
+
+
     public Long getId() {
         return id;
     }
