@@ -12,7 +12,7 @@ public class JacksonConf {
     @Bean
     public ObjectMapper getObjectMapper(){
         final ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.setDateFormat(new SimpleDateFormat("yyyy-MM-tt HH:mm:ss"));
+        objectMapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
         return objectMapper;
     }
 }
